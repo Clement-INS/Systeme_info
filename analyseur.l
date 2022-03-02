@@ -1,61 +1,52 @@
 %{
 #include <stdlib.h>
 #include <stdio.h>
+#include "y.tab.h"
 %}
 
 %option noyywrap
 
 %%
-"main" {printf("tMAIN");
+"main" {printf("tMAIN\n");
             return tMAIN; }
-"{" {printf("tAOUV");
+"{" {printf("tAOUV\n");
         return tAOUV;}
-"}" {printf("tAFER");
+"}" {printf("tAFER\n");
         return tAFER;}
-"const" {printf("tCONST");
+"const " {printf("tCONST\n");
         return tCONST;}
-"int " {printf("tINT");
+"int " {printf("tINT\n");
         return tINT;}
-\"[a-zA-Z0-9]*\"  {printf("tSTR");
-        yylval.str = yytext;
-        return tSTR;}
-"+" {printf("tPLUS");
+"+" {printf("tPLUS\n");
         return tPLUS;}
-"-" {printf("tMOINS");
+"-" {printf("tMOINS\n");
         return tMOINS;}
-"*" {printf("tMUL");
+"*" {printf("tMUL\n");
         return tMUL;}
-"/" {printf("tDIV");
+"/" {printf("tDIV\n");
         return tDIV;}
-"=" {printf("tEQ");
+"=" {printf("tEQ\n");
         return tEQ;}
-"(" {printf("tPOUV");
+"(" {printf("tPOUV\n");
         return tPOUV;}
-")" {printf("tPFERM");
+")" {printf("tPFERM\n");
         return tPFERM;}
 [ \t\n]      {}
-"," {printf("tVIRG");
+"," {printf("tVIRG\n");
         return tVIRG;}
-";" {printf("tSEMCOL");
+";" {printf("tSEMCOL\n");
         return tSEMCOL;}
-"printf" {printf("tPRINT");
+"printf" {printf("tPRINT\n");
         return tPRINT;}
 [0-9]+(e[0-9]+)? {
-    printf("number");
+    printf("number\n");
     int n = strtold(yytext, NULL);
 //	  yylval.nb = n;
 printf(">>> %d\n", n);
 	  return tNB;}
-"if" {printf("tIF");
-        return tIF;}
-"while" {printf("tWHILE");
-        return tWHILE}
-
-
-
-%%
-
-int main(){
-    yylex();
-    return 1;
-}
+\".*\"  {printf("tSTR\n");
+        yylval.str = yytext;
+        return tSTR;}
+[a-zA-Z][a-zA-Z0-9_]*  {printf("tID\n");
+        yylval.id = yytext;
+        return tID;}

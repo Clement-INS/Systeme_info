@@ -1,0 +1,7 @@
+int main(){
+    int a;
+    const int b;
+
+    a = 1 + 2;
+    b = b + a;
+}

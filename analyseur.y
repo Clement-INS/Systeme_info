@@ -4,26 +4,67 @@
 int var[26];
 void yyerror(char *s);
 %}
-%union { int nb; char str; }
+%union { int nb; char* str; char* id}
 %token tMAIN tAOUV tAFER tCONST tINT tPLUS tMOINS tMUL tDIV tEQ tPOUV tPFERM tVIRG tSEMCOL tPRINT
 %token <nb> tNB 
 %token <str> tSTR
-
+%token <id> tID
+%start Program
 
 %%
 
-Program :   Function;
-Function :  tMAIN tPOUV tPFERM Content 
-        | tMAIN tPOUV Arg tPFERM Content;
-Arg :   tNB 
-        | tSTR 
-        | Arg tVIRG Arg;
-Content :   tAOUV Expr tAFER 
-        | tAOUV tAFER;
-Expr :  Expr Expr 
-        | Decl 
-        | If 
-        | While 
-        | Affect
+Program : Functions ;
+
+Functions : Function Functions
+        | Main;
+
+Function : Type tID tPOUV Params tPFERM Body;
+
+Main : Type tMAIN tPOUV tPFERM Body;
+
+Body : tAOUV Decls Insts tAFER;
+
+Type : tINT;
+
+Params : Param
+        | Param tVIRG Params;
+
+Param : Type tID;
+
+Decls : Decl Decls
+        |;
+
+Decl : Type Ids tSEMCOL
+        | tCONST Type Ids tSEMCOL;
+        
+Ids : tID
+        | tID tVIRG Ids;
+
+Insts : Inst Insts
+        |;
+
+Inst : Affect
         | tPRINT tPOUV tSTR tPFERM tSEMCOL;
-Affect :    tCONST 
+
+Affect : tID tEQ Operations tSEMCOL;
+
+Operations : Operation Operations
+        | Operation;
+
+Operation : tNB
+        | tNB Op Operation
+        | tID Op Operation
+        | tID;
+
+Op : tPLUS
+        | tMOINS
+        | tDIV
+        | tMUL;
+
+%%
+void yyerror(char *s) { fprintf(stderr, "%s\n", s); }
+int main(void) {
+  printf("Program C\n"); // yydebug=1;
+  yyparse();
+  return 0;
+}

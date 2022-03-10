@@ -1,6 +1,7 @@
 GRM=analyseur.y
 LEX=analyseur.l
 BIN=analyseur.out
+SYM=symbols.out
 
 CC=gcc
 CFLAGS=-Wall -g
@@ -19,10 +20,15 @@ lex.yy.c: $(LEX)
 	flex $<
 
 $(BIN): $(OBJ)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) symbols.c $^ -o $@
+
+
 
 clean:
-	rm $(OBJ) y.tab.c y.tab.h lex.yy.c analyseur.out
+	rm $(OBJ) y.tab.c y.tab.h lex.yy.c analyseur.out symbols.out
 
-test: all
-	./tests.sh
+tests_ok: all
+	./tests_ok.sh
+
+tests_ko: all
+	./tests_ko.sh

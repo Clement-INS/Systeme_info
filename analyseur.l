@@ -16,6 +16,7 @@
 "const " {printf("tCONST\n");
         return tCONST;}
 "int " {printf("tINT\n");
+        yylval.type = strdup(yytext);
         return tINT;}
 "+" {printf("tPLUS\n");
         return tPLUS;}
@@ -45,8 +46,8 @@
 printf(">>> %d\n", n);
 	  return tNB;}
 \".*\"  {printf("tSTR\n");
-        yylval.str = yytext;
+        yylval.str = strdup(yytext);
         return tSTR;}
 [a-zA-Z][a-zA-Z0-9_]*  {printf("tID\n");
-        yylval.id = yytext;
+        yylval.id = strdup(yytext);
         return tID;}

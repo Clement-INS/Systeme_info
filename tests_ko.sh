@@ -1,9 +1,4 @@
 #!/bin/bash
-	for i in test_ok/*; do
-		cat $i | ./analyseur.out
-		echo "$?-0"
-	done
-
     for i in test_ko/*; do
 		cat $i | ./analyseur.out
 		echo "$?-1"

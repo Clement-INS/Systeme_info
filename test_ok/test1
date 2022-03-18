@@ -2,6 +2,6 @@ int main(){
     int a , c, d;
     const int b;
 
-    a = 1 + 2;
+    a = 1 + 2 + 3 + 12;
     b = b + a;
 }

@@ -26,4 +26,6 @@ void pop_symbols();
 
 void print_symbols();
 
+int get_adr(char* name);
+
 #endif

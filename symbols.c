@@ -2,44 +2,53 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int index = -1;
-int index_for_types = -1;
+int index_sym = -1;
+int index_sym_for_types = -1;
 int depth = 0;
 
 void increment_depth(){
-    printf("++++++");
     depth++;
 }
 
 void update_type(char* type, int constant){
-    while(index_for_types < index){
-        index_for_types++;
-        symbols[index_for_types].type = type;
-        symbols[index_for_types].constant = constant;
+    while(index_sym_for_types < index_sym){
+        index_sym_for_types++;
+        symbols[index_sym_for_types].type = type;
+        symbols[index_sym_for_types].constant = constant;
     }
 }
 
 void push_sym(char* name){
-    index++;
-    symbol sym = {.name = name, .type = NULL, .adr = index, .depth = depth};
-    symbols[index] = sym;
+    index_sym++;
+    symbol sym = {.name = name, .type = NULL, .adr = index_sym, .depth = depth};
+    symbols[index_sym] = sym;
 }
 
 void pop_symbols(){
     print_symbols();
     printf("POPING!!!\n");
     printf("\n\n");
-    int copy = symbols[index].depth;
+    int copy = symbols[index_sym].depth;
     depth--;
-    while (index >= 0 && symbols[index].depth == copy){
-        index--;
+    while (index_sym >= 0 && symbols[index_sym].depth == copy){
+        index_sym--;
     }
     print_symbols();
 }
 
 void print_symbols(){
-    for (int i = 0; i <= index; i++){
+    for (int i = 0; i <= index_sym; i++){
         printf("Name = %s, Type = %s, Adr = %d, Depth = %d, Const = %d \n", symbols[i].name, symbols[i].type, symbols[i].adr, symbols[i].depth, symbols[i].constant);
     }
 }
 
+int get_adr(char* name){
+    int i = 0;
+    while (i <= index_sym){
+        if (strcmp(name, symbols[i].name) == 0){
+            return symbols[i].adr;
+        }
+        i++;
+    }
+    return -1;
+}

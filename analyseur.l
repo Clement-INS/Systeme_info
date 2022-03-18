@@ -9,6 +9,10 @@
 %%
 "main" {printf("tMAIN\n");
             return tMAIN; }
+"if" {printf("tIF\n");
+            return tIF; }
+"while" {printf("tWHILE\n");
+            return tWHILE; }
 "{" {printf("tAOUV\n");
         return tAOUV;}
 "}" {printf("tAFER\n");
@@ -28,6 +32,8 @@
         return tDIV;}
 "=" {printf("tEQ\n");
         return tEQ;}
+"!" {printf("tEXCL\n");
+        return tEXCL;}
 "(" {printf("tPOUV\n");
         return tPOUV;}
 ")" {printf("tPFERM\n");

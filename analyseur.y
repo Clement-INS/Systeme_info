@@ -13,8 +13,7 @@ void yyerror(char *s);
 %token <str> tSTR
 %token <str> tINT
 %token <id> tID
-%type <type> Type Op
-
+%type <type> Type
 %start Program
 
 %%
@@ -61,17 +60,26 @@ Condition : Elem tEQ tEQ Elem
 Elem : tID
         | tINT;
 
-Affect : tID {select_result($1);} tEQ Operations tSEMCOL {reset_operator();};
+Affect : tID tEQ Calcul tSEMCOL {add_instruction("COP", get_adr($1), pop_tmp(), -1);};
 
-Operations : tNB {add_result_number($1);}
-        | tNB {add_result_number($1);} Op {select_operator($3);} Operations
-        | tID {add_result_variable($1);} Op {select_operator($3);} Operations
-        | tID {add_result_variable($1);};
+/*Operations : tNB {int tmp = push_tmp(); add_instruction("AFC", tmp, $1, -1);}
+        | Operations tMUL Operations {add_operation("MUL");}
+        | Operations tDIV Operations {add_operation("DIV");}
+        | Operations tPLUS Operations {add_operation("ADD");}
+        | Operations tMOINS Operations {add_operation("SOU");}
+        | tID {int tmp = push_tmp(); add_instruction("COP", tmp, get_adr($1), -1);};
+*/
 
-Op : tPLUS {$$ = "ADD";}
-        | tMOINS {$$ = "SOU";}
-        | tDIV {$$ = "DIV";}
-        | tMUL {$$ = "MUL";};
+Calcul : Calcul tPLUS DivMul {add_operation("ADD");}
+        | Calcul tMOINS DivMul {add_operation("SOU");}
+        | DivMul;
+
+DivMul : DivMul tMUL Terme {add_operation("MUL");}
+        | DivMul tDIV Terme {add_operation("DIV");}
+        | Terme;
+
+Terme : tID {int tmp = push_tmp(); add_instruction("COP", tmp, get_adr($1), -1);}
+        | tNB {int tmp = push_tmp(); add_instruction("AFC", tmp, $1, -1);};
 
 %%
 void yyerror(char *s) { fprintf(stderr, "%s\n", s); }

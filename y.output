@@ -50,29 +50,18 @@ Grammaire
    26 Elem: tID
    27     | tINT
 
-   28 $@2: %empty
+   28 Affect: tID tEQ Calcul tSEMCOL
 
-   29 Affect: tID $@2 tEQ Operations tSEMCOL
+   29 Calcul: Calcul tPLUS DivMul
+   30       | Calcul tMOINS DivMul
+   31       | DivMul
 
-   30 Operations: tNB
+   32 DivMul: DivMul tMUL Terme
+   33       | DivMul tDIV Terme
+   34       | Terme
 
-   31 $@3: %empty
-
-   32 $@4: %empty
-
-   33 Operations: tNB $@3 Op $@4 Operations
-
-   34 $@5: %empty
-
-   35 $@6: %empty
-
-   36 Operations: tID $@5 Op $@6 Operations
-   37           | tID
-
-   38 Op: tPLUS
-   39   | tMOINS
-   40   | tDIV
-   41   | tMUL
+   35 Terme: tID
+   36      | tNB
 
 
 Terminaux, suivis des règles où ils apparaissent
@@ -86,20 +75,20 @@ Terminaux, suivis des règles où ils apparaissent
     tAOUV (262) 7
     tAFER (263) 7
     tCONST (264) 15
-    tPLUS (265) 38
-    tMOINS (266) 39
-    tMUL (267) 41
-    tDIV (268) 40
-    tEQ (269) 15 23 24 29
+    tPLUS (265) 29
+    tMOINS (266) 30
+    tMUL (267) 32
+    tDIV (268) 33
+    tEQ (269) 15 23 24 28
     tPOUV (270) 4 5 21 22
     tPFERM (271) 4 5 21 22
     tVIRG (272) 10 17
-    tSEMCOL (273) 14 15 21 29
+    tSEMCOL (273) 14 15 21 28
     tPRINT (274) 21
-    tNB <nb> (275) 15 30 33
+    tNB <nb> (275) 15 36
     tSTR <str> (276) 21
     tINT <str> (277) 8 27
-    tID <id> (278) 4 11 15 16 17 26 29 36 37
+    tID <id> (278) 4 11 15 16 17 26 28 35
 
 
 Non-terminaux, suivis des règles où ils apparaissent
@@ -155,29 +144,17 @@ Non-terminaux, suivis des règles où ils apparaissent
         à gauche: 26 27
         à droite: 23 24 25
     Affect (41)
-        à gauche: 29
-        à droite: 20
-    $@2 (42)
         à gauche: 28
-        à droite: 29
-    Operations (43)
-        à gauche: 30 33 36 37
-        à droite: 29 33 36
-    $@3 (44)
-        à gauche: 31
-        à droite: 33
-    $@4 (45)
-        à gauche: 32
-        à droite: 33
-    $@5 (46)
-        à gauche: 34
-        à droite: 36
-    $@6 (47)
-        à gauche: 35
-        à droite: 36
-    Op <type> (48)
-        à gauche: 38 39 40 41
-        à droite: 33 36
+        à droite: 20
+    Calcul (42)
+        à gauche: 29 30 31
+        à droite: 28 29 30
+    DivMul (43)
+        à gauche: 32 33 34
+        à droite: 29 30 31 32 33
+    Terme (44)
+        à gauche: 35 36
+        à droite: 32 33 34
 
 
 État 0
@@ -479,11 +456,9 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 34
 
-   29 Affect: tID . $@2 tEQ Operations tSEMCOL
+   28 Affect: tID . tEQ Calcul tSEMCOL
 
-    $défaut  réduction par utilisation de la règle 28 ($@2)
-
-    $@2  aller à l'état 44
+    tEQ  décalage et aller à l'état 44
 
 
 État 35
@@ -565,9 +540,14 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 44
 
-   29 Affect: tID $@2 . tEQ Operations tSEMCOL
+   28 Affect: tID tEQ . Calcul tSEMCOL
 
-    tEQ  décalage et aller à l'état 54
+    tNB  décalage et aller à l'état 54
+    tID  décalage et aller à l'état 55
+
+    Calcul  aller à l'état 56
+    DivMul  aller à l'état 57
+    Terme   aller à l'état 58
 
 
 État 45
@@ -588,7 +568,7 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    15 Decl: tCONST Type tID tEQ . tNB tSEMCOL
 
-    tNB  décalage et aller à l'état 55
+    tNB  décalage et aller à l'état 59
 
 
 État 48
@@ -616,7 +596,7 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    22 Inst: tIF tPOUV Condition . tPFERM Body
 
-    tPFERM  décalage et aller à l'état 56
+    tPFERM  décalage et aller à l'état 60
 
 
 État 52
@@ -625,8 +605,8 @@ Non-terminaux, suivis des règles où ils apparaissent
    24          | Elem . tEXCL tEQ Elem
    25          | Elem .
 
-    tEXCL  décalage et aller à l'état 57
-    tEQ    décalage et aller à l'état 58
+    tEXCL  décalage et aller à l'état 61
+    tEQ    décalage et aller à l'état 62
 
     $défaut  réduction par utilisation de la règle 25 (Condition)
 
@@ -635,246 +615,227 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    21 Inst: tPRINT tPOUV tSTR . tPFERM tSEMCOL
 
-    tPFERM  décalage et aller à l'état 59
+    tPFERM  décalage et aller à l'état 63
 
 
 État 54
 
-   29 Affect: tID $@2 tEQ . Operations tSEMCOL
+   36 Terme: tNB .
 
-    tNB  décalage et aller à l'état 60
-    tID  décalage et aller à l'état 61
-
-    Operations  aller à l'état 62
+    $défaut  réduction par utilisation de la règle 36 (Terme)
 
 
 État 55
 
-   15 Decl: tCONST Type tID tEQ tNB . tSEMCOL
+   35 Terme: tID .
 
-    tSEMCOL  décalage et aller à l'état 63
+    $défaut  réduction par utilisation de la règle 35 (Terme)
 
 
 État 56
+
+   28 Affect: tID tEQ Calcul . tSEMCOL
+   29 Calcul: Calcul . tPLUS DivMul
+   30       | Calcul . tMOINS DivMul
+
+    tPLUS    décalage et aller à l'état 64
+    tMOINS   décalage et aller à l'état 65
+    tSEMCOL  décalage et aller à l'état 66
+
+
+État 57
+
+   31 Calcul: DivMul .
+   32 DivMul: DivMul . tMUL Terme
+   33       | DivMul . tDIV Terme
+
+    tMUL  décalage et aller à l'état 67
+    tDIV  décalage et aller à l'état 68
+
+    $défaut  réduction par utilisation de la règle 31 (Calcul)
+
+
+État 58
+
+   34 DivMul: Terme .
+
+    $défaut  réduction par utilisation de la règle 34 (DivMul)
+
+
+État 59
+
+   15 Decl: tCONST Type tID tEQ tNB . tSEMCOL
+
+    tSEMCOL  décalage et aller à l'état 69
+
+
+État 60
 
    22 Inst: tIF tPOUV Condition tPFERM . Body
 
     tAOUV  décalage et aller à l'état 17
 
-    Body  aller à l'état 64
-
-
-État 57
-
-   24 Condition: Elem tEXCL . tEQ Elem
-
-    tEQ  décalage et aller à l'état 65
-
-
-État 58
-
-   23 Condition: Elem tEQ . tEQ Elem
-
-    tEQ  décalage et aller à l'état 66
-
-
-État 59
-
-   21 Inst: tPRINT tPOUV tSTR tPFERM . tSEMCOL
-
-    tSEMCOL  décalage et aller à l'état 67
-
-
-État 60
-
-   30 Operations: tNB .
-   33           | tNB . $@3 Op $@4 Operations
-
-    tSEMCOL   réduction par utilisation de la règle 30 (Operations)
-    $défaut  réduction par utilisation de la règle 31 ($@3)
-
-    $@3  aller à l'état 68
+    Body  aller à l'état 70
 
 
 État 61
 
-   36 Operations: tID . $@5 Op $@6 Operations
-   37           | tID .
+   24 Condition: Elem tEXCL . tEQ Elem
 
-    tSEMCOL   réduction par utilisation de la règle 37 (Operations)
-    $défaut  réduction par utilisation de la règle 34 ($@5)
-
-    $@5  aller à l'état 69
+    tEQ  décalage et aller à l'état 71
 
 
 État 62
 
-   29 Affect: tID $@2 tEQ Operations . tSEMCOL
+   23 Condition: Elem tEQ . tEQ Elem
 
-    tSEMCOL  décalage et aller à l'état 70
+    tEQ  décalage et aller à l'état 72
 
 
 État 63
+
+   21 Inst: tPRINT tPOUV tSTR tPFERM . tSEMCOL
+
+    tSEMCOL  décalage et aller à l'état 73
+
+
+État 64
+
+   29 Calcul: Calcul tPLUS . DivMul
+
+    tNB  décalage et aller à l'état 54
+    tID  décalage et aller à l'état 55
+
+    DivMul  aller à l'état 74
+    Terme   aller à l'état 58
+
+
+État 65
+
+   30 Calcul: Calcul tMOINS . DivMul
+
+    tNB  décalage et aller à l'état 54
+    tID  décalage et aller à l'état 55
+
+    DivMul  aller à l'état 75
+    Terme   aller à l'état 58
+
+
+État 66
+
+   28 Affect: tID tEQ Calcul tSEMCOL .
+
+    $défaut  réduction par utilisation de la règle 28 (Affect)
+
+
+État 67
+
+   32 DivMul: DivMul tMUL . Terme
+
+    tNB  décalage et aller à l'état 54
+    tID  décalage et aller à l'état 55
+
+    Terme  aller à l'état 76
+
+
+État 68
+
+   33 DivMul: DivMul tDIV . Terme
+
+    tNB  décalage et aller à l'état 54
+    tID  décalage et aller à l'état 55
+
+    Terme  aller à l'état 77
+
+
+État 69
 
    15 Decl: tCONST Type tID tEQ tNB tSEMCOL .
 
     $défaut  réduction par utilisation de la règle 15 (Decl)
 
 
-État 64
+État 70
 
    22 Inst: tIF tPOUV Condition tPFERM Body .
 
     $défaut  réduction par utilisation de la règle 22 (Inst)
 
 
-État 65
+État 71
 
    24 Condition: Elem tEXCL tEQ . Elem
 
     tINT  décalage et aller à l'état 49
     tID   décalage et aller à l'état 50
 
-    Elem  aller à l'état 71
+    Elem  aller à l'état 78
 
 
-État 66
+État 72
 
    23 Condition: Elem tEQ tEQ . Elem
 
     tINT  décalage et aller à l'état 49
     tID   décalage et aller à l'état 50
 
-    Elem  aller à l'état 72
+    Elem  aller à l'état 79
 
 
-État 67
+État 73
 
    21 Inst: tPRINT tPOUV tSTR tPFERM tSEMCOL .
 
     $défaut  réduction par utilisation de la règle 21 (Inst)
 
 
-État 68
+État 74
 
-   33 Operations: tNB $@3 . Op $@4 Operations
+   29 Calcul: Calcul tPLUS DivMul .
+   32 DivMul: DivMul . tMUL Terme
+   33       | DivMul . tDIV Terme
 
-    tPLUS   décalage et aller à l'état 73
-    tMOINS  décalage et aller à l'état 74
-    tMUL    décalage et aller à l'état 75
-    tDIV    décalage et aller à l'état 76
+    tMUL  décalage et aller à l'état 67
+    tDIV  décalage et aller à l'état 68
 
-    Op  aller à l'état 77
-
-
-État 69
-
-   36 Operations: tID $@5 . Op $@6 Operations
-
-    tPLUS   décalage et aller à l'état 73
-    tMOINS  décalage et aller à l'état 74
-    tMUL    décalage et aller à l'état 75
-    tDIV    décalage et aller à l'état 76
-
-    Op  aller à l'état 78
+    $défaut  réduction par utilisation de la règle 29 (Calcul)
 
 
-État 70
+État 75
 
-   29 Affect: tID $@2 tEQ Operations tSEMCOL .
+   30 Calcul: Calcul tMOINS DivMul .
+   32 DivMul: DivMul . tMUL Terme
+   33       | DivMul . tDIV Terme
 
-    $défaut  réduction par utilisation de la règle 29 (Affect)
+    tMUL  décalage et aller à l'état 67
+    tDIV  décalage et aller à l'état 68
+
+    $défaut  réduction par utilisation de la règle 30 (Calcul)
 
 
-État 71
+État 76
+
+   32 DivMul: DivMul tMUL Terme .
+
+    $défaut  réduction par utilisation de la règle 32 (DivMul)
+
+
+État 77
+
+   33 DivMul: DivMul tDIV Terme .
+
+    $défaut  réduction par utilisation de la règle 33 (DivMul)
+
+
+État 78
 
    24 Condition: Elem tEXCL tEQ Elem .
 
     $défaut  réduction par utilisation de la règle 24 (Condition)
 
 
-État 72
+État 79
 
    23 Condition: Elem tEQ tEQ Elem .
 
     $défaut  réduction par utilisation de la règle 23 (Condition)
-
-
-État 73
-
-   38 Op: tPLUS .
-
-    $défaut  réduction par utilisation de la règle 38 (Op)
-
-
-État 74
-
-   39 Op: tMOINS .
-
-    $défaut  réduction par utilisation de la règle 39 (Op)
-
-
-État 75
-
-   41 Op: tMUL .
-
-    $défaut  réduction par utilisation de la règle 41 (Op)
-
-
-État 76
-
-   40 Op: tDIV .
-
-    $défaut  réduction par utilisation de la règle 40 (Op)
-
-
-État 77
-
-   33 Operations: tNB $@3 Op . $@4 Operations
-
-    $défaut  réduction par utilisation de la règle 32 ($@4)
-
-    $@4  aller à l'état 79
-
-
-État 78
-
-   36 Operations: tID $@5 Op . $@6 Operations
-
-    $défaut  réduction par utilisation de la règle 35 ($@6)
-
-    $@6  aller à l'état 80
-
-
-État 79
-
-   33 Operations: tNB $@3 Op $@4 . Operations
-
-    tNB  décalage et aller à l'état 60
-    tID  décalage et aller à l'état 61
-
-    Operations  aller à l'état 81
-
-
-État 80
-
-   36 Operations: tID $@5 Op $@6 . Operations
-
-    tNB  décalage et aller à l'état 60
-    tID  décalage et aller à l'état 61
-
-    Operations  aller à l'état 82
-
-
-État 81
-
-   33 Operations: tNB $@3 Op $@4 Operations .
-
-    $défaut  réduction par utilisation de la règle 33 (Operations)
-
-
-État 82
-
-   36 Operations: tID $@5 Op $@6 Operations .
-
-    $défaut  réduction par utilisation de la règle 36 (Operations)

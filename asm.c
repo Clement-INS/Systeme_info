@@ -15,15 +15,17 @@ typedef struct
     int nb_arguments;
 }  asm_line;
 
-typedef struct
+/*typedef struct
 {
     if_list* before;
     if_list* next;
     int index_jmp;
-}  if_list;
+}  if_list;*/
 
 asm_line asm_code[INSTRUCTIONS];
 
+
+int index_tmp = -1;
 int index_asm = 0;
 int target_affect;
 char* operator;
@@ -83,6 +85,27 @@ void add_instruction(char* instruction, int r0, int r1, int r2){
     }
     asm_code[index_asm] = line;
     index_asm++;
+}
+
+int push_tmp(){
+    index_tmp++;
+    return 200+index_tmp;
+}
+
+int pop_tmp(){
+    index_tmp--;
+    return 201+index_tmp;
+}
+
+void add_operation(char* name){
+    int right = pop_tmp();
+    int left = pop_tmp();
+    add_instruction(name, left, left, right);
+    push_tmp();
+}
+
+void reset_tmp(){
+    index_tmp = -1;
 }
 
 void select_result(char* variable){

@@ -1,19 +1,6 @@
 #ifndef SYMBOLS
 #define SYMBOLS
 
-#define TABLE_SIZE 200
-
-typedef struct
-{
-    char* name;
-    char* type;
-    int adr;
-    int depth;
-    int constant; 
-}  symbol;
-
-symbol symbols[TABLE_SIZE];
-
 void increment_depth();
 
 void decrement_depth();
@@ -27,5 +14,7 @@ void pop_symbols();
 void print_symbols();
 
 int get_adr(char* name);
+
+int isconst(char* name);
 
 #endif

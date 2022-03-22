@@ -2,6 +2,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TABLE_SIZE 200
+
+
+typedef struct
+{
+    char* name;
+    char* type;
+    int adr;
+    int depth;
+    int constant; 
+}  symbol;
+
+symbol symbols[TABLE_SIZE];
+
 int index_sym = -1;
 int index_sym_for_types = -1;
 int depth = 0;
@@ -27,12 +41,10 @@ void push_sym(char* name){
 void pop_symbols(){
     print_symbols();
     printf("POPING!!!\n");
-    printf("\n\n");
-    int copy = symbols[index_sym].depth;
-    depth--;
-    while (index_sym >= 0 && symbols[index_sym].depth == copy){
+    while (index_sym >= 0 && symbols[index_sym].depth == depth){
         index_sym--;
     }
+    depth--;
     print_symbols();
 }
 
@@ -47,6 +59,17 @@ int get_adr(char* name){
     while (i <= index_sym){
         if (strcmp(name, symbols[i].name) == 0){
             return symbols[i].adr;
+        }
+        i++;
+    }
+    return -1;
+}
+
+int isconst(char* name){
+    int i = 0;
+    while (i <= index_sym){
+        if (strcmp(name, symbols[i].name) == 0){
+            return symbols[i].constant;
         }
         i++;
     }

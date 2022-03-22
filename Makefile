@@ -16,7 +16,7 @@ y.tab.c: $(GRM)
 	yacc -v -d $<
 
 lex.yy.c: $(LEX)
-	flex $<
+	flex --debug $<
 
 $(BIN): $(OBJ)
 	$(CC) $(CFLAGS) $(CPPFLAGS) symbols.c asm.c $^ -o $@

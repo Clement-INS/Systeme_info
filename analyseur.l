@@ -48,7 +48,7 @@
 [0-9]+(e[0-9]+)? {
     printf("number\n");
     int n = strtold(yytext, NULL);
-//	  yylval.nb = n;
+	yylval.nb = strtold(yytext, NULL);
 printf(">>> %d\n", n);
 	  return tNB;}
 \".*\"  {printf("tSTR\n");

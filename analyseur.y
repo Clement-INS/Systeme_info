@@ -40,8 +40,8 @@ Param : Type tID {push_sym($2); update_type($1, 0);};
 Decls : Decl Decls
         |;
 
-Decl : Type Ids tSEMCOL { update_type($1, 0); }
-        | tCONST Type Ids tSEMCOL { update_type($2, 1); };
+Decl : Type Ids tSEMCOL { update_type($1, 0);}
+        | tCONST Type tID tEQ tNB tSEMCOL {push_sym($3); update_type($2, 1); add_instruction("AFC", get_adr($3), $5, -1);};
         
 Ids : tID {push_sym($1);}
         | tID tVIRG Ids {push_sym($1);};
@@ -49,26 +49,23 @@ Ids : tID {push_sym($1);}
 Insts : Inst Insts
         |;
 
-Inst : Affect
-        | tPRINT tPOUV tSTR tPFERM tSEMCOL;
-        /*| tIF tPOUV Condition tPFERM tAOUV Body tAFER
-        | tWHILE tPOUV Condition tPFERM tAOUV Body tAFER;*/
+Inst :  Affect
+        | tPRINT tPOUV tSTR tPFERM tSEMCOL
+        | tIF tPOUV Condition tPFERM Body;
+        /*| tWHILE tPOUV Condition tPFERM tAOUV Body tAFER;*/
 
-/*Condition : Elem tEQ tEQ Elem
+Condition : Elem tEQ tEQ Elem
         | Elem tEXCL tEQ Elem
         | Elem;
 
 Elem : tID
-        | tINT;*/
+        | tINT;
 
 Affect : tID {select_result($1);} tEQ Operations tSEMCOL {reset_operator();};
 
-Operations : Operation Operations
-        | Operation;
-
-Operation : tNB {add_result_number($1);}
-        | tNB {add_result_number($1);} Op {select_operator($2);} Operation
-        | tID {add_result_variable($1);} Op Operation
+Operations : tNB {add_result_number($1);}
+        | tNB {add_result_number($1);} Op {select_operator($3);} Operations
+        | tID {add_result_variable($1);} Op {select_operator($3);} Operations
         | tID {add_result_variable($1);};
 
 Op : tPLUS {$$ = "ADD";}

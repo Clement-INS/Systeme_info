@@ -8,12 +8,13 @@ int var[26];
 void yyerror(char *s);
 %}
 %union { int nb; char* str; char* id; char* type}
-%token tEXCL tIF tWHILE tMAIN tAOUV tAFER tCONST tPLUS tMOINS tMUL tDIV tEQ tPOUV tPFERM tVIRG tSEMCOL tPRINT
-%token <nb> tNB 
+%token tSUP tINF tEXCL tIF tWHILE tMAIN tAOUV tAFER tCONST tPLUS tMOINS tMUL tDIV tEQ tPOUV tPFERM tVIRG tSEMCOL tPRINT
+%token <nb> tNB
 %token <str> tSTR
 %token <str> tINT
 %token <id> tID
 %type <type> Type
+%type <nb> Elem Condition
 %start Program
 
 %%
@@ -49,26 +50,20 @@ Insts : Inst Insts
         |;
 
 Inst :  Affect
-        | tPRINT tPOUV tSTR tPFERM tSEMCOL
-        | tIF tPOUV Condition tPFERM Body;
-        /*| tWHILE tPOUV Condition tPFERM tAOUV Body tAFER;*/
+        | tPRINT tPOUV Elem tPFERM tSEMCOL {add_instruction("PRI", $3, -1, -1);}
+        | tIF tPOUV Condition tPFERM {push_cond(); add_instruction("JMF", $3, -1, -1); pop_tmp();} Body {pop_cond();}
+        | tWHILE {push_while();} tPOUV Condition tPFERM {push_cond(); add_instruction("JMF", $4, -1, -1); pop_tmp();} Body {pop_while(); pop_cond();};
 
-Condition : Elem tEQ tEQ Elem
-        | Elem tEXCL tEQ Elem
-        | Elem;
+Condition : Elem tEQ tEQ Elem {int tmp = push_tmp(); add_instruction("EQU", tmp, $1, $4); $$ = tmp;}
+        | Elem tSUP Elem {int tmp = push_tmp(); add_instruction("SUP", tmp, $1, $3); $$ = tmp;}
+        | Elem tINF Elem {int tmp = push_tmp(); add_instruction("INF", tmp, $1, $3); $$ = tmp;}
+        | Elem {$$ = $1; push_tmp();};
 
-Elem : tID
-        | tINT;
+Elem : tNB { int tmp = push_tmp(); add_instruction("AFC", tmp, $1, -1); $$ = tmp; pop_tmp();}
+        | tID {$$ = get_adr($1);};
+        
 
 Affect : tID tEQ Calcul tSEMCOL {add_instruction("COP", get_adr($1), pop_tmp(), -1);};
-
-/*Operations : tNB {int tmp = push_tmp(); add_instruction("AFC", tmp, $1, -1);}
-        | Operations tMUL Operations {add_operation("MUL");}
-        | Operations tDIV Operations {add_operation("DIV");}
-        | Operations tPLUS Operations {add_operation("ADD");}
-        | Operations tMOINS Operations {add_operation("SOU");}
-        | tID {int tmp = push_tmp(); add_instruction("COP", tmp, get_adr($1), -1);};
-*/
 
 Calcul : Calcul tPLUS DivMul {add_operation("ADD");}
         | Calcul tMOINS DivMul {add_operation("SOU");}

@@ -15,13 +15,6 @@ typedef struct
     int nb_arguments;
 }  asm_line;
 
-/*typedef struct
-{
-    if_list* before;
-    if_list* next;
-    int index_jmp;
-}  if_list;*/
-
 asm_line asm_code[INSTRUCTIONS];
 
 
@@ -29,6 +22,10 @@ int index_tmp = -1;
 int index_asm = 0;
 int target_affect;
 char* operator;
+int conds[50];
+int index_cond = -1;
+int start_whiles[50];
+int index_while = -1;
 
 void add_instruction(char* instruction, int r0, int r1, int r2){
     asm_line line = { .instruction = instruction, .r0 = r0, .r1 = r1, .r2 = r2 };
@@ -87,6 +84,26 @@ void add_instruction(char* instruction, int r0, int r1, int r2){
     index_asm++;
 }
 
+void push_cond(){
+    index_cond++;
+    conds[index_cond] = index_asm;
+}
+
+void pop_cond(){
+    asm_code[conds[index_cond]].r1 = index_asm+1;
+    index_cond--;
+}
+
+void push_while(){
+    index_while++;
+    start_whiles[index_while] = index_asm;
+}
+
+void pop_while(){
+    add_instruction("JMP", start_whiles[index_while]+1, -1, -1);
+    index_while--;
+}
+
 int push_tmp(){
     index_tmp++;
     return 200+index_tmp;
@@ -102,49 +119,6 @@ void add_operation(char* name){
     int left = pop_tmp();
     add_instruction(name, left, left, right);
     push_tmp();
-}
-
-void reset_tmp(){
-    index_tmp = -1;
-}
-
-void select_result(char* variable){
-    if (isconst(variable)){
-        exit(1);
-    }
-    target_affect = get_adr(variable);
-}
-
-void select_operator(char* op){
-    printf("select_operator\n");
-    operator = op;
-}
-
-void reset_operator(){
-    printf("reset_operator\n");
-    operator = NULL;
-}
-
-void add_result_number(int number){
-    printf("add_result_number : %d\n", number);
-    if (operator == NULL){
-        add_instruction("AFC", target_affect, number, -1);
-    }
-    else{
-        add_instruction("AFC", 200, number, -1); //200 correspond à la première adresse non disponible pour les variables
-        add_instruction(operator, target_affect, target_affect, 200);
-    }
-}
-
-void add_result_variable(char* name_variable){
-    printf("add_result_variable\n");
-    int adr = get_adr(name_variable);
-    if (operator == NULL){
-        add_instruction("COP", target_affect, adr, -1);
-    }
-    else{
-        add_instruction(operator, target_affect, target_affect, adr);
-    }
 }
 
 void print_instruction_table(){

@@ -34,6 +34,10 @@
         return tEQ;}
 "!" {printf("tEXCL\n");
         return tEXCL;}
+">" {printf("tSUP\n");
+        return tSUP;}
+"<" {printf("tINF\n");
+        return tINF;}
 "(" {printf("tPOUV\n");
         return tPOUV;}
 ")" {printf("tPFERM\n");

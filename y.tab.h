@@ -49,51 +49,55 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    tEXCL = 258,
-    tIF = 259,
-    tWHILE = 260,
-    tMAIN = 261,
-    tAOUV = 262,
-    tAFER = 263,
-    tCONST = 264,
-    tPLUS = 265,
-    tMOINS = 266,
-    tMUL = 267,
-    tDIV = 268,
-    tEQ = 269,
-    tPOUV = 270,
-    tPFERM = 271,
-    tVIRG = 272,
-    tSEMCOL = 273,
-    tPRINT = 274,
-    tNB = 275,
-    tSTR = 276,
-    tINT = 277,
-    tID = 278
+    tSUP = 258,
+    tINF = 259,
+    tEXCL = 260,
+    tIF = 261,
+    tWHILE = 262,
+    tMAIN = 263,
+    tAOUV = 264,
+    tAFER = 265,
+    tCONST = 266,
+    tPLUS = 267,
+    tMOINS = 268,
+    tMUL = 269,
+    tDIV = 270,
+    tEQ = 271,
+    tPOUV = 272,
+    tPFERM = 273,
+    tVIRG = 274,
+    tSEMCOL = 275,
+    tPRINT = 276,
+    tNB = 277,
+    tSTR = 278,
+    tINT = 279,
+    tID = 280
   };
 #endif
 /* Tokens.  */
-#define tEXCL 258
-#define tIF 259
-#define tWHILE 260
-#define tMAIN 261
-#define tAOUV 262
-#define tAFER 263
-#define tCONST 264
-#define tPLUS 265
-#define tMOINS 266
-#define tMUL 267
-#define tDIV 268
-#define tEQ 269
-#define tPOUV 270
-#define tPFERM 271
-#define tVIRG 272
-#define tSEMCOL 273
-#define tPRINT 274
-#define tNB 275
-#define tSTR 276
-#define tINT 277
-#define tID 278
+#define tSUP 258
+#define tINF 259
+#define tEXCL 260
+#define tIF 261
+#define tWHILE 262
+#define tMAIN 263
+#define tAOUV 264
+#define tAFER 265
+#define tCONST 266
+#define tPLUS 267
+#define tMOINS 268
+#define tMUL 269
+#define tDIV 270
+#define tEQ 271
+#define tPOUV 272
+#define tPFERM 273
+#define tVIRG 274
+#define tSEMCOL 275
+#define tPRINT 276
+#define tNB 277
+#define tSTR 278
+#define tINT 279
+#define tID 280
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -102,7 +106,7 @@ union YYSTYPE
 #line 10 "analyseur.y"
  int nb; char* str; char* id; char* type
 
-#line 106 "y.tab.h"
+#line 110 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

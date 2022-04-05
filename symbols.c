@@ -62,6 +62,8 @@ int get_adr(char* name){
         }
         i++;
     }
+    printf("Variable not declared !!! \n");
+    exit(2);
     return -1;
 }
 

@@ -1,0 +1,23 @@
+
+    process 
+    
+    begin
+
+        if Ctrl_Alu = "00" then
+            S_16 <= ; 
+            if S_16 > X"00FF" then C <= '1'; else C <= '0'; end if;
+            
+        elsif Ctrl_Alu = "01" then
+            S_16 <= (( X"00"&A) - (X"00"&B));
+            if (A<B) then N <= '1'; else N <= '0'; end if;
+                    
+        elsif Ctrl_Alu = "10" then           
+            S_16 <= A*B ;
+            if S_16 > X"00FF" then O <= '1'; else O <= '0';end if;
+             
+        end if;  
+        if (S_16(7 downto 0) = X"00") then Z <= '1'; else Z <= '0'; end if;
+        
+        S <= S_16(7 downto 0); 
+        
+    end process;

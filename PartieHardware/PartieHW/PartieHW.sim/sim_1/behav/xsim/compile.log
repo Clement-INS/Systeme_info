@@ -1,0 +1,12 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU

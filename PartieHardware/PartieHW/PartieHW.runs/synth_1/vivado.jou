@@ -2,11 +2,11 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Apr 14 12:03:33 2022
-# Process ID: 83209
+# Start of session at: Fri Apr 22 11:54:00 2022
+# Process ID: 42805
 # Current directory: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1
-# Command line: vivado -log MemDeDonnees.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MemDeDonnees.tcl
-# Log file: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/MemDeDonnees.vds
+# Command line: vivado -log CheminDesDonnees.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CheminDesDonnees.tcl
+# Log file: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/CheminDesDonnees.vds
 # Journal file: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source MemDeDonnees.tcl -notrace
+source CheminDesDonnees.tcl -notrace

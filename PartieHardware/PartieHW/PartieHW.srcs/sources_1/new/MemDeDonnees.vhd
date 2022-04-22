@@ -46,18 +46,19 @@ architecture Behavioral of MemDeDonnees is
     signal Memory : RegisterArray;
     
 begin
-
+    Output <= Memory(to_integer(unsigned(Addr)));
     process
         
     begin
-    
+        
+        
+        
         wait until CLK'Event and CLK = '1';
         if RST = '1' then
             Memory <= (others => X"00");
         elsif RW = '0' then
-            Memory(to_integer(unsigned(Addr))) <= Input;
-        else 
-            Output <= Memory(to_integer(unsigned(Addr)));
+            Memory(to_integer(unsigned(Addr))) <= Input;        
+            
         end if;
         
     end process;

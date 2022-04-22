@@ -82,10 +82,10 @@ begin
         );
         
         Clock_process : process
-                begin
-                    CLK_local <= not(CLK_local);
+            begin
+                CLK_local <= not(CLK_local);
                 wait for Clock_period/2;
-        end process;
+            end process;
               
         -- Stmulus process
         AddrA_local <= "1100", "1111" after 500ns;

@@ -34,3 +34,15 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Sy
 INFO: [VRFC 10-307] analyzing entity test_BancDeRegistres
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/test_BancDeRegistres.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity test_BancDeRegistres
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MemDeDonnees
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/test_MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_MemDeDonnees
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/test_MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_MemDeDonnees
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity MemDeDonnees
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/test_MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_MemDeDonnees
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sim_1/new/test_MemDeDonnees.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity test_MemDeDonnees

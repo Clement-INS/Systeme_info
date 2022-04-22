@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+USE ieee.numeric_std.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -38,8 +38,17 @@ entity MemDesInstructions is
 end MemDesInstructions;
 
 architecture Behavioral of MemDesInstructions is
-
+    Type RegisterArray is Array(15 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+    signal Memory : RegisterArray;
+    
 begin
-
+     Memory(0)<= x"06040900";
+     
+     process
+     
+     begin
+        wait until CLK'Event and CLK = '1';
+        Output <= Memory(to_integer(unsigned(Addr)));
+     end process;
 
 end Behavioral;

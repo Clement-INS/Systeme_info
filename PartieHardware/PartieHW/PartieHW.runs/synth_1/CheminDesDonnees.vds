@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Apr 22 11:54:00 2022
-# Process ID: 42805
+# Start of session at: Wed May 11 10:21:48 2022
+# Process ID: 9221
 # Current directory: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1
 # Command line: vivado -log CheminDesDonnees.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CheminDesDonnees.tcl
 # Log file: /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/CheminDesDonnees.vds
@@ -15,12 +15,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 42817 
+INFO: Helper process launched with PID 9244 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1255.273 ; gain = 83.828 ; free physical = 57437 ; free virtual = 69536
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1255.270 ; gain = 83.828 ; free physical = 60591 ; free virtual = 71332
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'CheminDesDonnees' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:40]
-INFO: [Synth 8-3491] module 'MemDesInstructions' declared at '/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:34' bound to instance 'Instructions' of component 'MemDesInstructions' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'CheminDesDonnees' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:41]
+INFO: [Synth 8-3491] module 'MemDesInstructions' declared at '/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:34' bound to instance 'Instructions' of component 'MemDesInstructions' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:89]
 INFO: [Synth 8-638] synthesizing module 'MemDesInstructions' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:40]
 WARNING: [Synth 8-3848] Net Memory[15] in module/entity MemDesInstructions does not have driver. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:42]
 WARNING: [Synth 8-3848] Net Memory[14] in module/entity MemDesInstructions does not have driver. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:42]
@@ -38,20 +38,20 @@ WARNING: [Synth 8-3848] Net Memory[3] in module/entity MemDesInstructions does n
 WARNING: [Synth 8-3848] Net Memory[2] in module/entity MemDesInstructions does not have driver. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:42]
 WARNING: [Synth 8-3848] Net Memory[1] in module/entity MemDesInstructions does not have driver. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'MemDesInstructions' (1#1) [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/MemDesInstructions.vhd:40]
-INFO: [Synth 8-3491] module 'BancDeRegistres' declared at '/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:35' bound to instance 'AFC' of component 'BancDeRegistres' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:130]
+INFO: [Synth 8-3491] module 'BancDeRegistres' declared at '/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:35' bound to instance 'AFC' of component 'BancDeRegistres' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:131]
 INFO: [Synth 8-638] synthesizing module 'BancDeRegistres' [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'BancDeRegistres' (2#1) [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element C_LI_DI_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:102]
-WARNING: [Synth 8-6014] Unused sequential element OP_DI_EX_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:109]
-WARNING: [Synth 8-6014] Unused sequential element OP_EX_Mem_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:114]
-WARNING: [Synth 8-6014] Unused sequential element OP_Mem_RE_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:119]
-INFO: [Synth 8-256] done synthesizing module 'CheminDesDonnees' (3#1) [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:40]
+WARNING: [Synth 8-6014] Unused sequential element C_LI_DI_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:103]
+WARNING: [Synth 8-6014] Unused sequential element OP_DI_EX_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:110]
+WARNING: [Synth 8-6014] Unused sequential element OP_EX_Mem_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:115]
+WARNING: [Synth 8-6014] Unused sequential element OP_Mem_RE_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'CheminDesDonnees' (3#1) [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:41]
 WARNING: [Synth 8-3331] design MemDesInstructions has unconnected port Addr[7]
 WARNING: [Synth 8-3331] design MemDesInstructions has unconnected port Addr[6]
 WARNING: [Synth 8-3331] design MemDesInstructions has unconnected port Addr[5]
 WARNING: [Synth 8-3331] design MemDesInstructions has unconnected port Addr[4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1299.898 ; gain = 128.453 ; free physical = 57448 ; free virtual = 69547
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1299.895 ; gain = 128.453 ; free physical = 60601 ; free virtual = 71342
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -64,10 +64,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1299.898 ; gain = 128.453 ; free physical = 57449 ; free virtual = 69548
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1299.895 ; gain = 128.453 ; free physical = 60601 ; free virtual = 71342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1299.898 ; gain = 128.453 ; free physical = 57449 ; free virtual = 69548
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1299.895 ; gain = 128.453 ; free physical = 60601 ; free virtual = 71342
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7k70tfbv676-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -81,29 +81,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1643.922 ; gain = 0.000 ; free physical = 57200 ; free virtual = 69299
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1643.918 ; gain = 0.000 ; free physical = 60357 ; free virtual = 71098
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57280 ; free virtual = 69378
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60434 ; free virtual = 71176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbv676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57280 ; free virtual = 69378
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60434 ; free virtual = 71176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57281 ; free virtual = 69380
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60436 ; free virtual = 71177
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'A_Mem_RE_reg' and it is trimmed from '8' to '4' bits. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:116]
-WARNING: [Synth 8-3936] Found unconnected internal register 'A_EX_Mem_reg' and it is trimmed from '8' to '4' bits. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:111]
-WARNING: [Synth 8-3936] Found unconnected internal register 'A_DI_EX_reg' and it is trimmed from '8' to '4' bits. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:106]
-WARNING: [Synth 8-3936] Found unconnected internal register 'A_LI_DI_reg' and it is trimmed from '8' to '4' bits. [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:100]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57271 ; free virtual = 69370
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60427 ; free virtual = 71168
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -119,8 +115,7 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
-	                8 Bit    Registers := 22    
-	                4 Bit    Registers := 4     
+	                8 Bit    Registers := 26    
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 32    
 	   2 Input      1 Bit        Muxes := 32    
@@ -136,8 +131,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	                8 Bit    Registers := 6     
-	                4 Bit    Registers := 4     
+	                8 Bit    Registers := 10    
 Module MemDesInstructions 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -181,10 +175,67 @@ WARNING: [Synth 8-6014] Unused sequential element AFC/Registers_reg[3] was remov
 WARNING: [Synth 8-6014] Unused sequential element AFC/Registers_reg[2] was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:54]
 WARNING: [Synth 8-6014] Unused sequential element AFC/Registers_reg[1] was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:54]
 WARNING: [Synth 8-6014] Unused sequential element AFC/Registers_reg[0] was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/BancDeRegistres.vhd:54]
-WARNING: [Synth 8-6014] Unused sequential element B_LI_DI_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:101]
-WARNING: [Synth 8-6014] Unused sequential element B_DI_EX_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:107]
-WARNING: [Synth 8-6014] Unused sequential element B_EX_Mem_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:112]
-WARNING: [Synth 8-6014] Unused sequential element B_Mem_RE_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:117]
+WARNING: [Synth 8-6014] Unused sequential element B_LI_DI_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:102]
+WARNING: [Synth 8-6014] Unused sequential element B_DI_EX_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:108]
+WARNING: [Synth 8-6014] Unused sequential element B_EX_Mem_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:113]
+WARNING: [Synth 8-6014] Unused sequential element B_Mem_RE_reg was removed.  [/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/sources_1/new/Pipeline.vhd:118]
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[8]' (FD) to 'Instructions/Output_reg[11]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[9]' (FD) to 'Instructions/Output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[10]' (FD) to 'Instructions/Output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[12]' (FD) to 'Instructions/Output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[13]' (FD) to 'Instructions/Output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[14]' (FD) to 'Instructions/Output_reg[15]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[15]' (FD) to 'Instructions/Output_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[0]' (FD) to 'A_LI_DI_reg[3]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[1]' (FD) to 'A_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[2]' (FD) to 'A_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[4]' (FD) to 'A_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[5]' (FD) to 'A_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[6]' (FD) to 'A_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_LI_DI_reg[7]' (FD) to 'OP_LI_DI_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[0]' (FDE) to 'A_DI_EX_reg[3]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[1]' (FDE) to 'A_DI_EX_reg[2]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[2]' (FDE) to 'A_DI_EX_reg[4]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[4]' (FDE) to 'A_DI_EX_reg[5]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[5]' (FDE) to 'A_DI_EX_reg[6]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[6]' (FDE) to 'A_DI_EX_reg[7]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[7]' (FD) to 'Instructions/Output_reg[6]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[6]' (FD) to 'Instructions/Output_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[4]' (FD) to 'Instructions/Output_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[5]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[1]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[2]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'Instructions/Output_reg[0]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Instructions/Output_reg[3] )
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[0]' (FDE) to 'A_EX_Mem_reg[3]'
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[1]' (FDE) to 'A_EX_Mem_reg[2]'
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[2]' (FDE) to 'A_EX_Mem_reg[4]'
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[4]' (FDE) to 'A_EX_Mem_reg[5]'
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[5]' (FDE) to 'A_EX_Mem_reg[6]'
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[6]' (FDE) to 'A_EX_Mem_reg[7]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[7]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[6]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[4]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[5]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[1]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[2]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[0]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'OP_LI_DI_reg[3]' (FD) to 'Instructions/Output_reg[3]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[0]' (FDE) to 'A_Mem_RE_reg[3]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[1]' (FDE) to 'A_Mem_RE_reg[2]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[2]' (FDE) to 'A_Mem_RE_reg[4]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[4]' (FDE) to 'A_Mem_RE_reg[5]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[5]' (FDE) to 'A_Mem_RE_reg[6]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[6]' (FDE) to 'A_Mem_RE_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A_DI_EX_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A_DI_EX_reg[7] )
+INFO: [Synth 8-3886] merging instance 'A_EX_Mem_reg[3]' (FDE) to 'A_EX_Mem_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A_EX_Mem_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Instructions/Output_reg[3] )
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[3]' (FDE) to 'A_EX_Mem_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_Mem_RE_reg[7]' (FDE) to 'A_EX_Mem_reg[7]'
+INFO: [Synth 8-3886] merging instance 'A_DI_EX_reg[7]' (FDE) to 'A_EX_Mem_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\A_EX_Mem_reg[7] )
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[31]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[30]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[29]) is unused and will be removed from module CheminDesDonnees.
@@ -201,48 +252,13 @@ WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[19]) is unus
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[18]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[17]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[16]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[15]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[14]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[13]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[12]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[11]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[10]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[9]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[8]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[7]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[6]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[5]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[4]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[0]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[7]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[6]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[5]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[4]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (OP_LI_DI_reg[0]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (A_LI_DI_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_LI_DI_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_LI_DI_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_LI_DI_reg[0]) is unused and will be removed from module CheminDesDonnees.
 WARNING: [Synth 8-3332] Sequential element (A_DI_EX_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_DI_EX_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_DI_EX_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_DI_EX_reg[0]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_EX_Mem_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_EX_Mem_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_EX_Mem_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_EX_Mem_reg[0]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_Mem_RE_reg[3]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_Mem_RE_reg[2]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_Mem_RE_reg[1]) is unused and will be removed from module CheminDesDonnees.
-WARNING: [Synth 8-3332] Sequential element (A_Mem_RE_reg[0]) is unused and will be removed from module CheminDesDonnees.
+WARNING: [Synth 8-3332] Sequential element (Instructions/Output_reg[3]) is unused and will be removed from module CheminDesDonnees.
+WARNING: [Synth 8-3332] Sequential element (A_EX_Mem_reg[7]) is unused and will be removed from module CheminDesDonnees.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57268 ; free virtual = 69369
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:20 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60425 ; free virtual = 71168
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -254,13 +270,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -272,7 +288,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:25 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -296,7 +312,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -309,7 +325,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -321,25 +337,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -352,23 +368,24 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+-+-----+------+
-| |Cell |Count |
-+-+-----+------+
-+-+-----+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |     8|
++------+-----+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |     0|
+|1     |top      |       |     8|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57146 ; free virtual = 69247
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60296 ; free virtual = 71039
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 80 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1643.922 ; gain = 128.453 ; free physical = 57199 ; free virtual = 69300
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 472.477 ; free physical = 57209 ; free virtual = 69310
+Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1643.918 ; gain = 128.453 ; free physical = 60349 ; free virtual = 71092
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.918 ; gain = 472.477 ; free physical = 60360 ; free virtual = 71103
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -376,11 +393,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-17 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+74 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 1643.922 ; gain = 484.102 ; free physical = 57195 ; free virtual = 69296
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 1643.918 ; gain = 484.102 ; free physical = 60350 ; free virtual = 71093
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/CheminDesDonnees.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CheminDesDonnees_utilization_synth.rpt -pb CheminDesDonnees_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1643.922 ; gain = 0.000 ; free physical = 57195 ; free virtual = 69296
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 22 11:54:35 2022...
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.15 . Memory (MB): peak = 1643.918 ; gain = 0.000 ; free physical = 60349 ; free virtual = 71092
+INFO: [Common 17-206] Exiting Vivado at Wed May 11 10:22:25 2022...

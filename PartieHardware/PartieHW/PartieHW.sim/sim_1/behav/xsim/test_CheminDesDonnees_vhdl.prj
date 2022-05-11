@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../PartieHW.srcs/sources_1/new/BancDeRegistres.vhd" \
+"../../../../PartieHW.srcs/sources_1/new/MemDesInstructions.vhd" \
+"../../../../PartieHW.srcs/sources_1/new/Pipeline.vhd" \
+"../../../../PartieHW.srcs/sim_1/new/test_CheminDesDonnees.vhd" \
+
+# Do not sort compile order
+nosort

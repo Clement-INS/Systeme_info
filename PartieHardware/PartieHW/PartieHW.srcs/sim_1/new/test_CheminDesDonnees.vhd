@@ -37,32 +37,34 @@ end test_CheminDesDonnees;
     
 architecture Behavioral of test_CheminDesDonnees is
     
-    COMPONENT CheminDesDonnees 
-        Port ( CLK : in STD_LOGIC );
-    end Component;
+    COMPONENT Pipeline 
+        Port ( CLK : in STD_LOGIC ;
+               rst : in STD_LOGIC ;
+               OUTPUT : out STD_LOGIC_VECTOR (7 downto 0)  );
+    end component;
     
     --Inputs
-    signal CLK_local : STD_logic := '0';
-    signal addr_local : STD_logic_vector (3 downto 0);
-    --outputs
-    signal output_local : std_logic_vector (7 downto 0);
+        signal CLK_local : STD_logic := '0';
+        signal rst_local : STD_logic := '0';
+     --Outputs
+        signal OUTPUT : STD_LOGIC_VECTOR (7 downto 0);
+    
+    constant Clock_period : time := 4 ns;
     
 begin
-    Label_uut: CheminDesDonnees PORT MAP ( --Fait gaffe, c'est " ,"  à la fin de chaque ligne, pas " ; "
-              CLK => CLK_local
+    Label_uut: Pipeline PORT MAP ( --Fait gaffe, c'est " ,"  à la fin de chaque ligne, pas " ; "
+              CLK => CLK_local,
+                  rst => rst_local,
+                  OUTPUT => OUTPUT
+              
     );
-    
-    -- On aura deux fils sur le meme inputs si on met addrW => qqc, mais on est obligé de mettre des trucs sur les inputs donc wtf?
-    Label_uut1: BancDeRegistres port map(
-        AddrA => addr_local,
-        
-        AddrB => X"0",
-        AddrW => A_Mem_RE ( 3 downto 0),
-        W => '1',
-        DATA => B_Mem_RE,
-        RST => '1',
-        CLK => CLK
 
-    );
+    rst_local <= '0', '1' after 20ns;
+    
+    Clock_process : process
+        begin
+            CLK_local <= not(CLK_local);
+            wait for Clock_period/2;
+        end process;
 
 end Behavioral;

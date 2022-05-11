@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1650621378">
+<GenRun Id="impl_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1652257352">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="CheminDesDonnees.drc"/>
   <File Type="BG-BGN" Name="CheminDesDonnees.bgn"/>
@@ -15,6 +15,7 @@
   <File Type="BG-BIT" Name="CheminDesDonnees.bit"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="CheminDesDonnees_bus_skew_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="CheminDesDonnees_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="CheminDesDonnees_bus_skew_postroute_physopted.rpt"/>
   <File Type="RDI-RDI" Name="CheminDesDonnees.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="CheminDesDonnees_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="CheminDesDonnees_timing_summary_postroute_physopted.pb"/>
@@ -68,8 +69,6 @@
   <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="CheminDesDonnees_bus_skew_routed.pb"/>
   <File Type="PA-TCL" Name="CheminDesDonnees.tcl"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="CheminDesDonnees_bus_skew_postroute_physopted.rpt"/>
-  <File Type="PA-DCP" Name="CheminDesDonnees.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/BancDeRegistres.vhd">
@@ -87,7 +86,6 @@
     <File Path="$PSRCDIR/sources_1/new/Pipeline.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/MemDeDonnees.vhd">

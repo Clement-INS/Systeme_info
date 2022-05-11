@@ -60,18 +60,21 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/impl_1/CheminDesDonnees.dcp
+  create_project -in_memory -part xc7k70tfbv676-1
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.cache/wt [current_project]
   set_property parent.project_path /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.xpr [current_project]
   set_property ip_output_repo /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  add_files -quiet /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.runs/synth_1/CheminDesDonnees.dcp
+  read_xdc /home/omre/4A/projetAutomEtHW/projet/Systeme_info/Systeme_info/PartieHardware/PartieHW/PartieHW.srcs/constrs_1/new/BancdeRegistres.xdc
+  link_design -top CheminDesDonnees -part xc7k70tfbv676-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

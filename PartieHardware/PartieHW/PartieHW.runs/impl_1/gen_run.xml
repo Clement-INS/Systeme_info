@@ -1,74 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1652257352">
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="PA-TCL" Name="CheminDesDonnees.tcl"/>
+  <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
+  <File Type="OPT-DCP" Name="CheminDesDonnees_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="CheminDesDonnees.hwdef"/>
+  <File Type="PWROPT-DCP" Name="CheminDesDonnees_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="CheminDesDonnees_placed.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="CheminDesDonnees_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="CheminDesDonnees_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="CheminDesDonnees_physopt.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="CheminDesDonnees_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="CheminDesDonnees_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="CheminDesDonnees_routed_bb.dcp"/>
+  <File Type="BG-BIT" Name="CheminDesDonnees.bit"/>
+  <File Type="BG-BIN" Name="CheminDesDonnees.bin"/>
+  <File Type="BITSTR-MSK" Name="CheminDesDonnees.msk"/>
+  <File Type="ROUTE-TIMING-PB" Name="CheminDesDonnees_timing_summary_routed.pb"/>
+  <File Type="BITSTR-RBT" Name="CheminDesDonnees.rbt"/>
+  <File Type="BITSTR-NKY" Name="CheminDesDonnees.nky"/>
+  <File Type="BITSTR-BMM" Name="CheminDesDonnees_bd.bmm"/>
   <File Type="BG-DRC" Name="CheminDesDonnees.drc"/>
+  <File Type="BITSTR-MMI" Name="CheminDesDonnees.mmi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-BGN" Name="CheminDesDonnees.bgn"/>
   <File Type="BITSTR-SYSDEF" Name="CheminDesDonnees.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="CheminDesDonnees.ltx"/>
-  <File Type="BITSTR-MMI" Name="CheminDesDonnees.mmi"/>
-  <File Type="BITSTR-BMM" Name="CheminDesDonnees_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="CheminDesDonnees.nky"/>
-  <File Type="BITSTR-RBT" Name="CheminDesDonnees.rbt"/>
-  <File Type="BITSTR-MSK" Name="CheminDesDonnees.msk"/>
-  <File Type="BG-BIN" Name="CheminDesDonnees.bin"/>
-  <File Type="BG-BIT" Name="CheminDesDonnees.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="CheminDesDonnees_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="CheminDesDonnees_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="CheminDesDonnees_bus_skew_postroute_physopted.rpt"/>
   <File Type="RDI-RDI" Name="CheminDesDonnees.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="CheminDesDonnees_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="CheminDesDonnees_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="CheminDesDonnees_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CheminDesDonnees_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="CheminDesDonnees_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW" Name="CheminDesDonnees_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="CheminDesDonnees_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="CheminDesDonnees_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="CheminDesDonnees_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="CheminDesDonnees_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="CheminDesDonnees_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="CheminDesDonnees_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="CheminDesDonnees_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="CheminDesDonnees_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="CheminDesDonnees_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="CheminDesDonnees_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CheminDesDonnees_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CheminDesDonnees_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="CheminDesDonnees_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="CheminDesDonnees_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="CheminDesDonnees_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="CheminDesDonnees_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="CheminDesDonnees_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="CheminDesDonnees_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="CheminDesDonnees_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="CheminDesDonnees_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="CheminDesDonnees_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="CheminDesDonnees_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="CheminDesDonnees_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="CheminDesDonnees_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="CheminDesDonnees_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="CheminDesDonnees_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="CheminDesDonnees_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="CheminDesDonnees_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="CheminDesDonnees_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="CheminDesDonnees_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="CheminDesDonnees_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="CheminDesDonnees_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="CheminDesDonnees_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="CheminDesDonnees_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="CheminDesDonnees_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="CheminDesDonnees_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="CheminDesDonnees_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="CheminDesDonnees.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="CheminDesDonnees_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="CheminDesDonnees_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="CheminDesDonnees_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="CheminDesDonnees_timing_summary_init.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="CheminDesDonnees_bus_skew_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="CheminDesDonnees_bus_skew_routed.pb"/>
-  <File Type="PA-TCL" Name="CheminDesDonnees.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/BancDeRegistres.vhd">

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1652257307">
-  <File Type="VDS-TIMING-PB" Name="CheminDesDonnees_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="CheminDesDonnees_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="CheminDesDonnees.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="CheminDesDonnees_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="CheminDesDonnees_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="CheminDesDonnees_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="CheminDesDonnees.vds"/>
-  <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
   <File Type="PA-TCL" Name="CheminDesDonnees.tcl"/>
+  <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
+  <File Type="RDS-RDS" Name="CheminDesDonnees.vds"/>
+  <File Type="RDS-DCP" Name="CheminDesDonnees.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/BancDeRegistres.vhd">

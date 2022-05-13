@@ -42,22 +42,23 @@ end MemDeDonnees;
 
 architecture Behavioral of MemDeDonnees is
 
-    Type RegisterArray is Array(15 downto 0) of STD_LOGIC_VECTOR(7 downto 0);
+    Type RegisterArray is Array(0 to 15) of STD_LOGIC_VECTOR(7 downto 0);
     signal Memory : RegisterArray;
     
 begin
     Output <= Memory(to_integer(unsigned(Addr)));
+    
     process
         
     begin
-        
-        
-        
+      
         wait until CLK'Event and CLK = '1';
         if RST = '1' then
-            Memory <= (others => X"00");
+            Memory <= (others => x"00");
         elsif RW = '0' then
-            Memory(to_integer(unsigned(Addr))) <= Input;        
+           Memory(to_integer(unsigned(Addr))) <= Input; 
+            --Memory <= (x"01", x"02", x"03", others => x"00");
+           
             
         end if;
         

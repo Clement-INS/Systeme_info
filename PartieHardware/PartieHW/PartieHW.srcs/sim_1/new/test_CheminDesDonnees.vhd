@@ -40,7 +40,7 @@ architecture Behavioral of test_CheminDesDonnees is
     COMPONENT Pipeline 
         Port ( CLK : in STD_LOGIC ;
                rst : in STD_LOGIC ;
-               OUTPUT : out STD_LOGIC_VECTOR (7 downto 0)  );
+               OUTPUTFINAL : out STD_LOGIC_VECTOR (7 downto 0)  );
     end component;
     
     --Inputs
@@ -55,7 +55,7 @@ begin
     Label_uut: Pipeline PORT MAP ( --Fait gaffe, c'est " ,"  à la fin de chaque ligne, pas " ; "
               CLK => CLK_local,
                   rst => rst_local,
-                  OUTPUT => OUTPUT
+                  OUTPUTFINAL => OUTPUT
               
     );
 

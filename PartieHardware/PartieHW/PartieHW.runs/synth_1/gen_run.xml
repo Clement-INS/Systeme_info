@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1652257307">
   <File Type="PA-TCL" Name="CheminDesDonnees.tcl"/>
+  <File Type="RDS-DCP" Name="CheminDesDonnees.dcp"/>
   <File Type="REPORTS-TCL" Name="CheminDesDonnees_reports.tcl"/>
   <File Type="RDS-RDS" Name="CheminDesDonnees.vds"/>
-  <File Type="RDS-DCP" Name="CheminDesDonnees.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/BancDeRegistres.vhd">

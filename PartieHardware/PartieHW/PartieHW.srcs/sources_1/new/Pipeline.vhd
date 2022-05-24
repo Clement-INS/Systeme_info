@@ -34,8 +34,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Pipeline is
   Port ( CLK : in STD_LOGIC ;
-  rst : in STD_LOGIC ;
-          OUTPUT : out STD_LOGIC_VECTOR (7 downto 0)  );
+         rst : in STD_LOGIC ;
+         OUTPUTFINAL : out STD_LOGIC_VECTOR (7 downto 0)  );
 end Pipeline;
     
     
@@ -81,7 +81,7 @@ architecture Behavioral of Pipeline is
                Output : out STD_LOGIC_VECTOR (7 downto 0));
     end component;
        
-    signal IP: STD_LOGIC_VECTOR (7 downto 0);  --pourqoui c'est vert?
+    signal IP: STD_LOGIC_VECTOR (7 downto 0);
     signal InstructionComplete : STD_LOGIC_VECTOR (31 downto 0);
     
     signal A_LI_DI : STD_LOGIC_VECTOR (7 downto 0);
@@ -116,7 +116,7 @@ architecture Behavioral of Pipeline is
     
 begin
     
-output <=  A_Mem_RE;
+OUTPUTFINAL <=  A_Mem_RE;
 
     Instructions: MemDesInstructions port map (
        Addr => IP,
@@ -125,20 +125,24 @@ output <=  A_Mem_RE;
     );
         
     process 
-        variable nb_nop : INTEGER := 0 ;
+        variable nb_nop : INTEGER := -1;
+        variable old_a : STD_LOGIC_VECTOR (7 downto 0) := x"00";
+        variable old_b : STD_LOGIC_VECTOR (7 downto 0) := x"00";
+        variable old_c : STD_LOGIC_VECTOR (7 downto 0) := x"00";
+        variable old_op : STD_LOGIC_VECTOR (7 downto 0) := x"00";
+        
     begin
     
         wait until CLK'Event and CLK = '1';
                 
                 if rst = '0' then
-                       ip <= x"00";
+                       ip <= x"ff";
                              
                        B_LI_DI <= x"00";
                        A_LI_DI <= x"00";
                        OP_LI_DI <= x"00";
                        C_LI_DI <= x"00";
                             
-                            --if OP_LI_DI = x"06" then 
                        A_DI_EX <= x"00";
                        B_DI_EX <= x"00";
                        C_DI_EX <= x"00";
@@ -153,46 +157,78 @@ output <=  A_Mem_RE;
                        OP_Mem_RE <= x"00";
                 
                 else 
-             
-            B_LI_DI <= InstructionComplete(15 downto 8);
-            A_LI_DI <= InstructionComplete(23 downto 16);
-            OP_LI_DI <= InstructionComplete(31 downto 24);
-            C_LI_DI <= InstructionComplete(7 downto 0);
-            
-            --if OP_LI_DI = x"06" then 
-                A_DI_EX <= A_LI_DI;
-                if OP_LI_DI = x"05" or OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03" or OP_LI_DI = x"04" then
-                    B_DI_EX <= QA;
-                else
-                    B_DI_EX <= B_LI_DI;
-                end if;               
-                C_DI_EX <= QB;
-                OP_DI_EX <= OP_LI_DI;
-                
-                A_EX_Mem <= A_DI_EX;
-                if OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03" or OP_DI_EX = x"04" then
-                    B_EX_MEM <= Sortie_Alu;
-                else
-                    B_EX_Mem <= B_DI_EX;
-               end if;
-                OP_EX_Mem <= OP_DI_EX;
-                
-                A_Mem_RE <= A_EX_Mem;
-                if OP_EX_Mem = x"0d" then
-                    B_Mem_RE <= out_mem_de_donnees;
-                else
-                    B_Mem_RE <= B_EX_Mem;
-               end if;
-                OP_Mem_RE <= OP_EX_Mem;
-            --end if;
-            if nb_nop <= 0 then
-                IP <= IP + 1;
-            elsif OP_LI_DI = x"05" and B_LI_DI = A_DI_EX and OP_DI_EX = x"06" then
-                nb_nop := 3;
-            end if;
-            
-            nb_nop := nb_nop-1;
-            
+                       
+                        A_DI_EX <= A_LI_DI;
+                        if OP_LI_DI = x"05" or OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03" or OP_LI_DI = x"04" then
+                            B_DI_EX <= QA;
+                        else
+                            B_DI_EX <= B_LI_DI;
+                        end if;               
+                        C_DI_EX <= QB;
+                        OP_DI_EX <= OP_LI_DI;
+                        
+                        A_EX_Mem <= A_DI_EX;
+                        if OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03" or OP_DI_EX = x"04" then
+                            B_EX_MEM <= Sortie_Alu;
+                        else
+                            B_EX_Mem <= B_DI_EX;
+                        end if;
+                        OP_EX_Mem <= OP_DI_EX;
+                        
+                        A_Mem_RE <= A_EX_Mem;
+                        if OP_EX_Mem = x"0d" then
+                            B_Mem_RE <= out_mem_de_donnees;
+                        else
+                            B_Mem_RE <= B_EX_Mem;
+                        end if;
+                        OP_Mem_RE <= OP_EX_Mem;
+                        
+                            --cas aleéa de donnée
+                        if (nb_nop < 0)
+                         and ((OP_LI_DI = x"05" and B_LI_DI = A_DI_EX and OP_DI_EX = x"06")
+                         or ((OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03") and (B_LI_DI = A_DI_EX or C_LI_DI = A_DI_EX) and (OP_DI_EX = x"06" or OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03")))
+                         then
+                            report "cas 1";
+                            old_a := A_LI_DI;
+                            old_b := B_LI_DI;
+                            old_c := C_LI_DI;
+                            old_op := OP_LI_DI;
+                            nb_nop := 2;
+                            B_LI_DI <= x"00";
+                            A_LI_DI <= x"00";
+                            OP_LI_DI <= x"00";
+                            C_LI_DI <= x"00";
+                            B_DI_EX <= x"00";
+                            A_DI_EX <= x"00";
+                            OP_DI_EX <= x"00";
+                            C_DI_EX <= x"00";
+                            IP <= IP - 1;
+                            --Cas normal
+                        elsif nb_nop < 0 then
+                            report "cas 2";
+                            B_LI_DI <= InstructionComplete(15 downto 8);
+                            A_LI_DI <= InstructionComplete(23 downto 16);
+                            OP_LI_DI <= InstructionComplete(31 downto 24);
+                            C_LI_DI <= InstructionComplete(7 downto 0);
+                            IP <= IP + 1;
+                        --Cas après des NOP    
+                        elsif nb_nop = 0 then
+                            report "cas 3";
+                            B_LI_DI <= old_b;
+                            A_LI_DI <= old_a;
+                            OP_LI_DI <= old_op;
+                            C_LI_DI <= old_c;
+                        -- Pendant des NOP
+                        else
+                            report "cas 4";
+                            B_LI_DI <= x"00";
+                            A_LI_DI <= x"00";
+                            OP_LI_DI <= x"00";
+                            C_LI_DI <= x"00";
+                        end if;
+                        
+                        nb_nop := nb_nop-1;
+                    
             end if;
             
     end process;

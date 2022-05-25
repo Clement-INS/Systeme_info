@@ -39,13 +39,10 @@ void push_sym(char* name){
 }
 
 void pop_symbols(){
-    print_symbols();
-    printf("POPING!!!\n");
     while (index_sym >= 0 && symbols[index_sym].depth == depth){
         index_sym--;
     }
     depth--;
-    print_symbols();
 }
 
 void print_symbols(){
@@ -75,5 +72,5 @@ int isconst(char* name){
         }
         i++;
     }
-    return -1;
+    return 0;
 }

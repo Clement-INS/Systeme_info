@@ -8,7 +8,7 @@ int var[26];
 void yyerror(char *s);
 %}
 %union { int nb; char* str; char* id; char* type}
-%token tSUP tINF tEXCL tIF tWHILE tMAIN tAOUV tAFER tCONST tPLUS tMOINS tMUL tDIV tEQ tPOUV tPFERM tVIRG tSEMCOL tPRINT
+%token tSUP tINF tEXCL tIF tWHILE tMAIN tAOUV tAFER tCONST tPLUS tMOINS tMUL tDIV tEQ tPOUV tPFERM tVIRG tSEMCOL tPRINT tELSE
 %token <nb> tNB
 %token <str> tSTR
 %token <str> tINT
@@ -51,8 +51,11 @@ Insts : Inst Insts
 
 Inst :  Affect
         | tPRINT tPOUV Elem tPFERM tSEMCOL {add_instruction("PRI", $3, -1, -1);}
-        | tIF tPOUV Condition tPFERM {push_cond(); add_instruction("JMF", $3, -1, -1); pop_tmp();} Body {pop_cond();}
-        | tWHILE {push_while();} tPOUV Condition tPFERM {push_cond(); add_instruction("JMF", $4, -1, -1); pop_tmp();} Body {pop_while(); pop_cond();};
+        | tIF tPOUV Condition tPFERM {push_cond1(); add_instruction("JMF", $3, -1, -1); pop_tmp();} Body {push_cond0(); add_instruction("JMP", -1, -1, -1); pop_cond1();} Else {pop_cond0();}
+        | tWHILE {push_while();} tPOUV Condition tPFERM {push_cond1(); add_instruction("JMF", $4, -1, -1); pop_tmp();} Body {pop_while(); pop_cond1();};
+
+Else : tELSE Body
+        | {remove_jmp();};
 
 Condition : Elem tEQ tEQ Elem {int tmp = push_tmp(); add_instruction("EQU", tmp, $1, $4); $$ = tmp;}
         | Elem tSUP Elem {int tmp = push_tmp(); add_instruction("SUP", tmp, $1, $3); $$ = tmp;}
@@ -63,7 +66,7 @@ Elem : tNB { int tmp = push_tmp(); add_instruction("AFC", tmp, $1, -1); $$ = tmp
         | tID {$$ = get_adr($1);};
         
 
-Affect : tID tEQ Calcul tSEMCOL {add_instruction("COP", get_adr($1), pop_tmp(), -1);};
+Affect : tID tEQ {if(isconst($1)) {exit(14);}} Calcul tSEMCOL {add_instruction("COP", get_adr($1), pop_tmp(), -1);};
 
 Calcul : Calcul tPLUS DivMul {add_operation("ADD");}
         | Calcul tMOINS DivMul {add_operation("SOU");}

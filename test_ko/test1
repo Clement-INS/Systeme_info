@@ -1,8 +1,9 @@
 int main(){
     int a;
-    const int b;
+    const int b = 1;
+    int c;
 
     a = 1 + 2;
-    int c;
+    
     b = b + a;
 }

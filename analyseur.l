@@ -11,6 +11,8 @@
             return tMAIN; }
 "if" {printf("tIF\n");
             return tIF; }
+"else" {printf("tELSE\n");
+            return tELSE; }
 "while" {printf("tWHILE\n");
             return tWHILE; }
 "{" {printf("tAOUV\n");

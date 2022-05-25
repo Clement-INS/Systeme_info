@@ -23,9 +23,12 @@ int index_asm = 0;
 int target_affect;
 char* operator;
 int conds[50];
+int conds_else[50];
 int index_cond = -1;
+int index_cond_else = -1;
 int start_whiles[50];
 int index_while = -1;
+
 
 void add_instruction(char* instruction, int r0, int r1, int r2){
     asm_line line = { .instruction = instruction, .r0 = r0, .r1 = r1, .r2 = r2 };
@@ -84,14 +87,38 @@ void add_instruction(char* instruction, int r0, int r1, int r2){
     index_asm++;
 }
 
-void push_cond(){
+void push_cond0(){
+    index_cond_else++;
+    conds_else[index_cond_else] = index_asm;
+}
+
+void push_cond1(){
     index_cond++;
     conds[index_cond] = index_asm;
 }
 
-void pop_cond(){
+void pop_cond0(){
+    asm_code[conds_else[index_cond_else]].r0 = index_asm+1;
+    printf("index asm : %s\n\n", asm_code[conds[index_cond_else]].instruction);
+    printf("R0 : %d\n\n", asm_code[conds[index_cond_else]].r0);
+    index_cond_else--;
+}
+
+void pop_cond1(){
     asm_code[conds[index_cond]].r1 = index_asm+1;
     index_cond--;
+}
+
+void remove_jmp(){
+    index_asm--;
+    for (int i = 0; i <= index_asm; i++){
+        if (strcmp(asm_code[i].instruction, "JMF") == 0 && asm_code[i].r1 > index_asm){
+            asm_code[i].r1--;
+        }
+        else if (strcmp(asm_code[i].instruction, "JMP") == 0 && asm_code[i].r0 > index_asm){
+            asm_code[i].r0--;
+        }
+    }
 }
 
 void push_while(){

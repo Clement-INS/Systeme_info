@@ -1,0 +1,9 @@
+Le dossier partie hardware contient toute la partie VHDL
+
+Le dossier output_asm contient l'assembleur obtenu en sorti de compilation
+
+Pour lancer une compilation faire:
+
+make clean
+make
+cat nom_du_fichier | ./analyseur.out

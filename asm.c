@@ -99,8 +99,6 @@ void push_cond1(){
 
 void pop_cond0(){
     asm_code[conds_else[index_cond_else]].r0 = index_asm+1;
-    printf("index asm : %s\n\n", asm_code[conds[index_cond_else]].instruction);
-    printf("R0 : %d\n\n", asm_code[conds[index_cond_else]].r0);
     index_cond_else--;
 }
 

@@ -159,7 +159,7 @@ OUTPUTFINAL <=  A_Mem_RE;
                 else 
                        
                         A_DI_EX <= A_LI_DI;
-                        if OP_LI_DI = x"05" or OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03" or OP_LI_DI = x"04" then
+                        if OP_LI_DI = x"05" or OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03" or OP_LI_DI = x"04" or OP_LI_DI = x"0e" then
                             B_DI_EX <= QA;
                         else
                             B_DI_EX <= B_LI_DI;
@@ -185,8 +185,12 @@ OUTPUTFINAL <=  A_Mem_RE;
                         
                             --cas aleéa de donnée
                         if (nb_nop < 0)
-                         and ((OP_LI_DI = x"05" and B_LI_DI = A_DI_EX and OP_DI_EX = x"06")
-                         or ((OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03") and (B_LI_DI = A_DI_EX or C_LI_DI = A_DI_EX) and (OP_DI_EX = x"06" or OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03")))
+                         and (((OP_LI_DI = x"05" or OP_LI_DI = x"0e") and B_LI_DI = A_DI_EX and (OP_DI_EX = x"06" or OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03"))
+                         or ((OP_LI_DI = x"05" or OP_LI_DI = x"0e") and B_LI_DI = A_EX_Mem and (OP_EX_Mem = x"06" or OP_EX_Mem = x"01" or OP_EX_Mem = x"02" or OP_EX_Mem = x"03"))
+                         or ((OP_LI_DI = x"05" or OP_LI_DI = x"0e") and B_LI_DI = A_Mem_RE and (OP_Mem_RE = x"06" or OP_Mem_RE = x"01" or OP_Mem_RE = x"02" or OP_Mem_RE = x"03"))
+                         or ((OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03") and (B_LI_DI = A_DI_EX or C_LI_DI = A_DI_EX) and (OP_DI_EX = x"06" or OP_DI_EX = x"01" or OP_DI_EX = x"02" or OP_DI_EX = x"03"))
+                         or ((OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03") and (B_LI_DI = A_EX_Mem or C_LI_DI = A_EX_Mem) and (OP_EX_Mem = x"06" or OP_EX_Mem = x"01" or OP_EX_Mem = x"02" or OP_EX_Mem = x"03"))
+                         or ((OP_LI_DI = x"01" or OP_LI_DI = x"02" or OP_LI_DI = x"03") and (B_LI_DI = A_Mem_RE or C_LI_DI = A_Mem_RE) and (OP_Mem_RE = x"06" or OP_Mem_RE = x"01" or OP_Mem_RE = x"02" or OP_Mem_RE = x"03")))
                          then
                             report "cas 1";
                             old_a := A_LI_DI;
